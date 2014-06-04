@@ -18,6 +18,8 @@ module.exports =
     grammar = editor.getGrammar()
     source = editor.getSelectedText() || editor.getText()
 
+    return unless source?
+
     opts =
       lang: grammar.name.toLowerCase(),
       format: 'rtf',
