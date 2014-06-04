@@ -3,10 +3,7 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'Copy as RTF'
-      'submenu': [
-        { 'label': 'Copy', 'command': 'copy-as-rtf:copy' }
-      ]
+      { 'label': 'Copy as RTF', 'command': 'copy-as-rtf:copy' }
     ]
   }
 ]

@@ -2,7 +2,7 @@
   "name": "copy-as-rtf",
   "main": "./lib/copy-as-rtf",
   "version": "0.0.0",
-  "description": "Copy your highlight code as RTF with Pygments",
+  "description": "A package to export highlighted code as RTF",
   "activationEvents": ["copy-as-rtf:copy"],
   "repository": "https://github.com/lucasmazza/copy-as-rtf",
   "license": "Apache 2.0",

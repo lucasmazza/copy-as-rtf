@@ -2,7 +2,15 @@ pygmentize = require 'pygmentize-bundled'
 copy = require 'copy-paste'
 
 module.exports =
+  configDefaults:
+    fontface: 'Monaco',
+    style: 'tango'
+
   activate: ->
+    atom.config.setDefaults 'copy-as-rtf',
+      fontface: @configDefaults.fontface,
+      style: @configDefaults.style
+
     atom.workspaceView.command 'copy-as-rtf:copy', => @copy()
 
   copy: ->
@@ -14,13 +22,11 @@ module.exports =
       lang: grammar.name.toLowerCase(),
       format: 'rtf',
       options:
-        fontface: 'Monaco',
-        style: 'tango',
+        fontface: atom.config.get('copy-as-rtf.fontface'),
+        style: atom.config.get('copy-as-rtf.style'),
 
-    text = pygmentize opts, source, (err, result) ->
-      rtf = result.toString()
-
+    pygmentize opts, source, (err, result) ->
       if err?
         console.error(err.message)
       else
-        copy.copy(rtf)
+        copy.copy(result.toString())
