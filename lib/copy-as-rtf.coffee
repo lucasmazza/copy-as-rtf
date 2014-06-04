@@ -31,4 +31,4 @@ module.exports =
       if err?
         console.error(err.message)
       else
-        copy.copy(result.toString().trim())
+        copy.copy(result.toString())
