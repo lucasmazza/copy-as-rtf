@@ -1,0 +1,16 @@
+{
+  "name": "copy-as-rtf",
+  "main": "./lib/copy-as-rtf",
+  "version": "0.0.0",
+  "description": "Copy your highlight code as RTF with Pygments",
+  "activationEvents": ["copy-as-rtf:copy"],
+  "repository": "https://github.com/lucasmazza/copy-as-rtf",
+  "license": "Apache 2.0",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "pygmentize-bundled" : "2.1.1",
+    "copy-paste": "*"
+  }
+}
