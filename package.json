@@ -1,16 +1,18 @@
 {
   "name": "copy-as-rtf",
   "main": "./lib/copy-as-rtf",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A package to export highlighted code as RTF",
-  "activationEvents": ["copy-as-rtf:copy"],
+  "activationEvents": [
+    "copy-as-rtf:copy"
+  ],
   "repository": "https://github.com/lucasmazza/copy-as-rtf",
   "license": "Apache 2.0",
   "engines": {
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "pygmentize-bundled" : "2.1.1",
+    "pygmentize-bundled": "2.1.1",
     "copy-paste": "*"
   }
 }
