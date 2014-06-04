@@ -1,5 +1,5 @@
 pygmentize = require 'pygmentize-bundled'
-copy = require 'copy-paste'
+copy = require('copy-paste').silent()
 
 module.exports =
   configDefaults:
