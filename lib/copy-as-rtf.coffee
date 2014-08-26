@@ -1,6 +1,8 @@
 pygmentize = require 'pygmentize-bundled'
 copy = require('copy-paste').silent()
 
+mapping = require './grammar-mapping'
+
 module.exports =
   configDefaults:
     fontface: 'Monaco',
@@ -20,8 +22,10 @@ module.exports =
 
     return unless source?
 
+    lang = mapping[grammar.name] || grammar.name
+
     opts =
-      lang: grammar.name.toLowerCase(),
+      lang: lang.toLowerCase(),
       format: 'rtf',
       options:
         fontface: atom.config.get('copy-as-rtf.fontface'),
