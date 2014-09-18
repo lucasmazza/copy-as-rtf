@@ -1,7 +1,7 @@
 {
   "name": "copy-as-rtf",
   "main": "./lib/copy-as-rtf",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A package to export highlighted code as RTF",
   "activationEvents": [
     "copy-as-rtf:copy"
