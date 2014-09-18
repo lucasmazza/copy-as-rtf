@@ -12,7 +12,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "pygmentize-bundled": "2.1.1",
+    "pygmentize-bundled": "2.2.0",
     "copy-paste": "*"
   }
 }
