@@ -16,7 +16,7 @@ module.exports =
     atom.workspaceView.command 'copy-as-rtf:copy', => @copy()
 
   copy: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
     grammar = editor.getGrammar()
     source = editor.getSelectedText() || editor.getText()
 
