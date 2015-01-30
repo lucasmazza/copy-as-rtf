@@ -13,10 +13,10 @@ module.exports =
       fontface: @configDefaults.fontface,
       style: @configDefaults.style
 
-    atom.workspaceView.command 'copy-as-rtf:copy', => @copy()
+    atom.commands.add 'atom-workspace', "copy-as-rtf:copy", => @copy()
 
   copy: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
     grammar = editor.getGrammar()
     source = editor.getSelectedText() || editor.getText()
 

@@ -9,7 +9,7 @@
   "repository": "https://github.com/lucasmazza/copy-as-rtf",
   "license": "Apache 2.0",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">0.176.0"
   },
   "dependencies": {
     "pygmentize-bundled": "2.2.0",
