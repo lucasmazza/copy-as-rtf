@@ -17,6 +17,7 @@ module.exports =
   "Regular Expressions (Python)": null
   "HTML (Ruby - ERB)": "HTML"
   "HTML (Rails)": "HTML"
+  "Ruby Haml": "HAML"
   "Ruby on Rails (RJS)": "Ruby"
   "Ruby on Rails": "Ruby"
   "JavaScript (Rails)": "JavaScript"
