@@ -3,9 +3,9 @@
   "main": "./lib/copy-as-rtf",
   "version": "0.6.0",
   "description": "A package to export highlighted code as RTF",
-  "activationEvents": [
-    "copy-as-rtf:copy"
-  ],
+  "activationCommands": {
+    "atom-workspace": ["copy-as-rtf:copy"]
+  },
   "repository": "https://github.com/lucasmazza/copy-as-rtf",
   "license": "Apache 2.0",
   "engines": {
