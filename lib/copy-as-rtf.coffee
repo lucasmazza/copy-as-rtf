@@ -4,16 +4,21 @@ copy = require('copy-paste')
 mapping = require './grammar-mapping'
 
 module.exports =
-  configDefaults:
-    fontface: 'Monaco',
-    fontsize: 16,
-    style: 'tango'
+  config:
+    fontface:
+      type: 'string'
+      default: 'Monaco'
+    fontsize:
+      type: 'integer'
+      default: 16
+    style:
+      type: 'string'
+      default: 'tango'
 
   activate: ->
-    atom.config.setDefaults 'copy-as-rtf',
-      fontface: @configDefaults.fontface,
-      fontsize: @configDefaults.fontsize,
-      style: @configDefaults.style
+    atom.config.set('copy-as-rtf.fontface', atom.config.get("fontface"))
+    atom.config.set('copy-as-rtf.fontsize', atom.config.get("fontsize"))
+    atom.config.set('copy-as-rtf.style', atom.config.get("style"))
 
     atom.commands.add 'atom-workspace', "copy-as-rtf:copy", => @copy()
 
