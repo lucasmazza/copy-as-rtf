@@ -29,7 +29,7 @@ module.exports =
 
     return unless source?
 
-    lang = mapping[grammar.name] || grammar.name
+    lang = mapping[grammar.name] || 'null'
 
     opts =
       lang: lang.toLowerCase(),
