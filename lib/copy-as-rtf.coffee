@@ -41,6 +41,6 @@ module.exports =
 
     pygmentize opts, source, (err, result) ->
       if err?
-        console.error(err.message)
+        throw new Error(err.message)
       else
         copy.copy(result.toString())
