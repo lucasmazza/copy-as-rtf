@@ -23,5 +23,6 @@ module.exports =
   "JavaScript (Rails)": "JavaScript"
   "SQL (Rails)": "SQL"
   "Shell Script (Bash)": "Bash"
+  "Shell Script": "Bash"
   "EEx": "Elixir"
   "HTML (EEx)": "HTML"
