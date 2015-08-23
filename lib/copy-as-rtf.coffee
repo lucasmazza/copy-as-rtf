@@ -1,4 +1,4 @@
-pygmentize = require 'pygmentize-bundled'
+pygmentize = require('pygmentize-bundled')
 copy = require('copy-paste')
 
 mapping = require './grammar-mapping'
@@ -16,11 +16,11 @@ module.exports =
       default: 'tango'
 
   activate: ->
-    atom.config.set('copy-as-rtf.fontface', atom.config.get("fontface"))
-    atom.config.set('copy-as-rtf.fontsize', atom.config.get("fontsize"))
-    atom.config.set('copy-as-rtf.style', atom.config.get("style"))
+    atom.config.set('copy-as-rtf.fontface', atom.config.get('fontface'))
+    atom.config.set('copy-as-rtf.fontsize', atom.config.get('fontsize'))
+    atom.config.set('copy-as-rtf.style', atom.config.get('style'))
 
-    atom.commands.add 'atom-workspace', "copy-as-rtf:copy", => @copy()
+    atom.commands.add 'atom-workspace', 'copy-as-rtf:copy', => @copy()
 
   copy: ->
     editor = atom.workspace.getActiveTextEditor()
