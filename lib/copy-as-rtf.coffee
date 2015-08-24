@@ -11,6 +11,9 @@ module.exports =
     fontsize:
       type: 'integer'
       default: 16
+    notifications:
+      type: 'boolean'
+      default: true
     style:
       type: 'string'
       default: 'tango'
@@ -19,6 +22,7 @@ module.exports =
     atom.config.set('copy-as-rtf.fontface', atom.config.get('fontface'))
     atom.config.set('copy-as-rtf.fontsize', atom.config.get('fontsize'))
     atom.config.set('copy-as-rtf.style', atom.config.get('style'))
+    atom.config.set('copy-as-rtf.notifications', atom.config.get('notifications'))
 
     atom.commands.add 'atom-workspace', 'copy-as-rtf:copy', => @copy()
 
@@ -43,4 +47,6 @@ module.exports =
       if err?
         throw new Error(err.message)
       else
+        if atom.config.get('copy-as-rtf.notifications')
+          atom.notifications.addSuccess('Highlighted snippet copied to your clipboard.')
         copy.copy(result.toString())
