@@ -1,2 +1,3 @@
 'atom-workspace':
   'cmd-alt-r': 'copy-as-rtf:copy'
+  'alt-r': 'copy-as-rtf:copy'
