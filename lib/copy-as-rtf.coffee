@@ -41,7 +41,7 @@ module.exports =
 
     pygmentize opts, source, (err, result) ->
       if err?
-        advice = if err.message.indexOf('python -V') > 0 then '\n\rPlease try to install Python in your computer' else ''
+        advice = if err.message.indexOf('python -V') > 0 then '\n\rPlease try to install Python in your system' else ''
         atom.notifications.addError('Package error (copy-as-rtf)' + advice, {detail : err.message})
       else
         copy.copy(result.toString())
