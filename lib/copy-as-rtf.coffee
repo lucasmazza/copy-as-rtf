@@ -16,10 +16,6 @@ module.exports =
       default: 'tango'
 
   activate: ->
-    atom.config.set('copy-as-rtf.fontface', atom.config.get("fontface"))
-    atom.config.set('copy-as-rtf.fontsize', atom.config.get("fontsize"))
-    atom.config.set('copy-as-rtf.style', atom.config.get("style"))
-
     atom.commands.add 'atom-workspace', "copy-as-rtf:copy", => @copy()
 
   copy: ->
