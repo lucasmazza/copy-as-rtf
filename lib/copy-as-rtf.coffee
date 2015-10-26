@@ -6,12 +6,15 @@ mapping = require './grammar-mapping'
 module.exports =
   config:
     fontface:
+      title: 'Font Face'
       type: 'string'
       default: 'Monaco'
     fontsize:
+      title: 'Font Size'
       type: 'integer'
       default: 16
     style:
+      title: 'Style'
       type: 'string'
       default: 'tango'
 
