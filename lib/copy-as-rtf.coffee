@@ -6,20 +6,19 @@ mapping = require './grammar-mapping'
 module.exports =
   config:
     fontface:
+      title: 'Font Face'
       type: 'string'
       default: 'Monaco'
     fontsize:
+      title: 'Font Size'
       type: 'integer'
       default: 16
     style:
+      title: 'Style'
       type: 'string'
       default: 'tango'
 
   activate: ->
-    atom.config.set('copy-as-rtf.fontface', atom.config.get("fontface"))
-    atom.config.set('copy-as-rtf.fontsize', atom.config.get("fontsize"))
-    atom.config.set('copy-as-rtf.style', atom.config.get("style"))
-
     atom.commands.add 'atom-workspace', "copy-as-rtf:copy", => @copy()
 
   copy: ->
@@ -41,6 +40,7 @@ module.exports =
 
     pygmentize opts, source, (err, result) ->
       if err?
-        console.error(err.message)
+        advice = if err.message.indexOf('python -V') > 0 then '\n\rPlease try to install Python in your system' else ''
+        atom.notifications.addError('Package error (copy-as-rtf)' + advice, {detail : err.message})
       else
         copy.copy(result.toString())
