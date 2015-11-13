@@ -1,6 +1,5 @@
 pygmentize = require 'pygmentize-bundled'
-copy = require('copy-paste')
-
+copy = require 'copy-paste'
 mapping = require './grammar-mapping'
 
 module.exports =
@@ -17,6 +16,7 @@ module.exports =
       title: 'Style'
       type: 'string'
       default: 'tango'
+      description: 'You can find several styles here: https://help.farbox.com/pygments.html'
 
   activate: ->
     atom.commands.add 'atom-workspace', "copy-as-rtf:copy", => @copy()
@@ -36,11 +36,14 @@ module.exports =
       options:
         fontface: atom.config.get('copy-as-rtf.fontface'),
         fontsize: atom.config.get('copy-as-rtf.fontsize') * 2,
-        style: atom.config.get('copy-as-rtf.style'),
+        style: atom.config.get('copy-as-rtf.style')
 
     pygmentize opts, source, (err, result) ->
       if err?
         advice = if err.message.indexOf('python -V') > 0 then '\n\rPlease try to install Python in your system' else ''
         atom.notifications.addError('Package error (copy-as-rtf)' + advice, {detail : err.message})
       else
-        copy.copy(result.toString())
+          if /^win/.test(process.platform) #Windows OS specific
+              require('./winclipcopy').toRTF result.toString(), source
+          else
+              copy.copy(result.toString())
