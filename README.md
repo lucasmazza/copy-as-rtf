@@ -15,6 +15,6 @@ inspired by the [SublimeHighlight](https://github.com/n1k0/SublimeHighlight) pac
 
 ## Installation Information
 
-If not installed in your system yet, download Python [here](https://www.python.org/downloads/)
+If not installed in your system yet, download Python [here](https://www.python.org/downloads/) and make sure it is set in your environment variables (help [here](http://superuser.com/a/143121))
 
 Copyright (c) 2014 Lucas Mazza.
