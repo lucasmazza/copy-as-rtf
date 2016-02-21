@@ -21,6 +21,7 @@ module.exports =
   "Ruby on Rails (RJS)": "Ruby"
   "Ruby on Rails": "Ruby"
   "JavaScript (Rails)": "JavaScript"
+  "Babel ES6 JavaScript": "JavaScript"
   "SQL (Rails)": "SQL"
   "Shell Script (Bash)": "Bash"
   "EEx": "Elixir"
