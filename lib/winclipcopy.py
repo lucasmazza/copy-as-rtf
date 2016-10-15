@@ -7,7 +7,7 @@
 # and http://pywin32.hg.sourceforge.net/hgweb/pywin32/pywin32/file/4c7503da2658/win32/src/win32clipboardmodule.cpp
 
 import sys, ctypes, getopt
-from ctypes import c_int, c_char_p, c_wchar, sizeof
+from ctypes import c_int, c_char, c_char_p, c_wchar, c_wchar_p, sizeof
 
 # Get required functions, strcpy..
 strcpy = ctypes.cdll.msvcrt.strcpy
@@ -26,33 +26,40 @@ gl = ctypes.windll.kernel32.GlobalLock     # Global Memory Locking
 gul = ctypes.windll.kernel32.GlobalUnlock
 GHND = 0x0042
 
+CF_HTML = rcf("HTML Format")
 CF_RTF = rcf("Rich Text Format")
+CF_RTFWO = rcf("Rich Text Format Without Objects")
 CF_TEXT = 1
+CF_UNICODETEXT = 13
 
 def fillClipboard(data, plaintext=None):
     if plaintext is None:
         plaintext = data
 
+    unicodetext = plaintext.encode('utf_16')
+    data = data.encode('cp1252', 'replace')
+    plaintext = plaintext.encode('cp1252', 'replace')
     ocb(None)  # Open Clip, Default task
     ecb()
 
     Put(data, CF_RTF)
+    Put(data, CF_RTFWO)
     Put(plaintext, CF_TEXT)
+    Put(unicodetext, CF_UNICODETEXT)
     ccb()
 
 def Put(data, format):
-    try:
+    if format == CF_UNICODETEXT:
+        hCd = ga(GHND, len(bytes(data)) + sizeof(c_char()))
+    else:
         hCd = ga(GHND, len(bytes(data)) + sizeof(c_wchar()))
-    except TypeError:
-        hCd = ga(GHND, len(bytes(data, 'ascii')) + sizeof(c_wchar()))
 
     pchData = gl(hCd)
 
-    try:
+    if format == CF_UNICODETEXT:
+        wcscpy(c_wchar_p(pchData), bytes(data))
+    else:
         strcpy(c_char_p(pchData), bytes(data))
-    except TypeError:
-        strcpy(c_char_p(pchData), bytes(data, 'ascii'))
-
     gul(hCd)
     scd(c_int(format), hCd)
 
