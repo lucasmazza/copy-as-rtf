@@ -1,28 +1,39 @@
 # Mapping between Atom grammar and Pygments languages.
+# http://pygments.org/docs/lexers/
+# Interresting syntax comparisons: https://en.wikipedia.org/wiki/Comment_(computer_programming)
 
 module.exports =
+  "Babel ES6 JavaScript": "JavaScript"
   "CoffeeScript (Literate)": "CoffeeScript"
-  "GitHub Markdown": "Markdown"
+  "EEx": "Elixir"
   "Git Commit Message": null
   "Git Config": null
   "Git Rebase Message": null
+  "HTML (EEx)": "HTML"
+  "HTML (Mustache)": "Mustache"
+  "HTML (Rails)": "HTML"
+  "HTML (Ruby - ERB)": "HTML"
   "Hyperlink": null
+  "JavaScript (Rails)": "JavaScript"
   "JavaServer Pages": null
   "Java Properties": null
   "JUnit Test Report": "XML"
-  "Regular Expressions (JavaScript)": "JavaScript"
-  "HTML (Mustache)": "Mustache"
-  "Strings File": null
   "Property List (XML)": "XML"
+  "Regular Expressions (JavaScript)": "JavaScript"
   "Regular Expressions (Python)": null
-  "HTML (Ruby - ERB)": "HTML"
-  "HTML (Rails)": "HTML"
   "Ruby Haml": "HAML"
-  "Ruby on Rails (RJS)": "Ruby"
   "Ruby on Rails": "Ruby"
-  "JavaScript (Rails)": "JavaScript"
-  "Babel ES6 JavaScript": "JavaScript"
+  "Ruby on Rails (RJS)": "Ruby"
+  "Shell Script (Bash)": "Bash"
   "SQL (Rails)": "SQL"
-  "Shell Script": "Bash"
-  "EEx": "Elixir"
-  "HTML (EEx)": "HTML"
+  "Strings File": null
+
+  # Known to not be in this version of pygments
+  # Trying to use best equivalent
+  "Elm": "Ada" # not atom native
+  "Gemfile": "Ruby"
+  "GitHub Markdown": null
+  "Processing": "CPP" # not atom native
+  "TypeScript": "JavaScript"
+  "Unix Shell": "Bash" # not atom native
+  "Cisco IOS" : "JAVA" # does not exist at all (atom and pyments)
