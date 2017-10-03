@@ -24,7 +24,7 @@ module.exports =
   "Ruby Haml": "HAML"
   "Ruby on Rails": "Ruby"
   "Ruby on Rails (RJS)": "Ruby"
-  "Shell Script (Bash)": "Bash"
+  "Shell Script": "Bash"
   "SQL (Rails)": "SQL"
   "Strings File": null
 
