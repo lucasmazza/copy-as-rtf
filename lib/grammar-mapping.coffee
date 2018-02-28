@@ -19,6 +19,7 @@ module.exports =
   "Java Properties": null
   "JUnit Test Report": "XML"
   "Property List (XML)": "XML"
+  "Python Console": "pycon"
   "Regular Expressions (JavaScript)": "JavaScript"
   "Regular Expressions (Python)": null
   "Ruby Haml": "HAML"
