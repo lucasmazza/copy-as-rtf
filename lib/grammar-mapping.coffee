@@ -4,6 +4,7 @@
 
 module.exports =
   "Babel ES6 JavaScript": "JavaScript"
+  "CMake Listfile": "CMake"
   "CoffeeScript (Literate)": "CoffeeScript"
   "EEx": "Elixir"
   "Git Commit Message": null
